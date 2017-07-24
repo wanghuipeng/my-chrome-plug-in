@@ -1,0 +1,22 @@
+{
+    "manifest_version": 2,
+    "name": "my-chrome-plug-in",
+    "description": "A plug-in for removing ads",
+    "version": "0.0.1",
+
+    "permissions": [
+        "tabs",
+        "http://www.runoob.com/"
+    ],
+
+    "browser_action": {
+        "default_icon": "icons/ad.png",
+        "default_title": "Remove ads",
+        "default_popup": "index.html"
+    },
+
+    "content_scripts": [{
+        "matches": ["*://www.runoob.com/*"],
+        "js": ["js/jquery-1.11.1.min.js", "js/demo.js"]
+    }]
+}
